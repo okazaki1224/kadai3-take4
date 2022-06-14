@@ -1,6 +1,10 @@
 class ApplicationController < ActionController::Base
    before_action :configure_permitted_parameters, if: :devise_controller?
    
+   #マイページ設定
+   def after_sign_in_path_for(resource) 
+      users_path
+   end
    
    protected
    

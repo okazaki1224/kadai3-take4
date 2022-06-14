@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 #  get 'books/index'
 #  get 'books/show'
 #  get 'books/edit'
+#devise_forはresources:usersよりも上に置くこと
   resources:books
   devise_for :users
   resources:users,only:[:index, :show, :edit]
