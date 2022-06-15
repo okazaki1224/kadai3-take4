@@ -4,10 +4,12 @@ Rails.application.routes.draw do
 #  get 'books/show'
 #  get 'books/edit'
 #devise_forはresources:usersよりも上に置くこと
-  resources:books
   devise_for :users
-  resources:users,only:[:index, :show, :edit]
   root to: 'homes#top'
-  get 'about'=>'homes#about',as:'about'
+  resources:books
+  get 'homes/about'=>'homes#about',as:'about'
+  
+  resources:users,only:[:index, :show, :edit]
+  
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
