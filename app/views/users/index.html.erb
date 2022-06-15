@@ -1,2 +1,9 @@
-<%= render 'books/list', user: current_user %>
+<%= render 'books/list', user: current_user,book: @book %>
 <h1>ここにユーザー一覧</h1>
+<% @users.each do |user| %>
+    <div>
+      <p>ここにﾌﾟﾛﾌ画像</p>
+      <%= user.name %>
+      <%= link_to 'show',user_path(user.id) %>
+    </div>
+  <% end %>

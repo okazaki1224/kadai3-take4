@@ -1,1 +1,15 @@
-<%= render 'list', user: @book.user %> 
+<%= render 'books/list', user: @user %>
+
+<p>～～～～～ここから右～～～～～</p>
+
+<h1>Books</h1>
+<h2>Title</h2>
+<h2>Opinion</h2>
+
+  <% @books.each do |book| %>
+    <div>
+      <%= book.title %>
+      <%= book.body %>
+    </div>
+  <% end %>
+  

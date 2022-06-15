@@ -1,16 +1,14 @@
-<%= render 'list', user: @book.user %> 
+<%= render 'list', user: @book.user, book: @book %> 
 
 ～～～～～ここから右側～～～～～
 
 <div>
   <h1>Book detail</h1>
   <p>プロフィール画像</p>
+  
   <%= @book.user.name %></br>
   <%= @book.title %></br>
   <%= @book.body %></br>
   <%= link_to "Editリンク",edit_book_path %>
   <%= link_to "Destroy",book_path,method: :delete %>
-  
-  <p>ボタン＋destroy処理</p>
-  
 </div>

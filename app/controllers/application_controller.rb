@@ -3,7 +3,8 @@ class ApplicationController < ActionController::Base
    
    #マイページ設定
    def after_sign_in_path_for(resource) 
-      users_path
+      books_path
+      
    end
    
    protected
