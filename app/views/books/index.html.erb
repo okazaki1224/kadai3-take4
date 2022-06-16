@@ -1,11 +1,16 @@
 <%= render 'list', user: current_user,book: @book %>
 
-  <h2>～～～～～↓自分の投稿一覧↓～～～～～</h2>
+  <h2>～～～～～↓全ユーザーの投稿一覧↓～～～～～</h2>
   
+  <h1>Books</h1>
+  <h4>Title</h4>
+  <h4>Opinion</h4>
     <% @books.each do |book| %>
      <p>【ここにﾕｰｻﾞｰﾌﾟﾛﾌｨｰﾙ画像】<%= image_tag 'sample-author1.jpg' %></p>
      
-     <p>書籍名：<%= book.title %></p>
+        <%= link_to book_path(book.id) do %>
+          <p>書籍名：<%= book.title %></p>
+        <% end %>
      <p>感想：<%= book.body %></p>
      
     <% end %>
