@@ -7,8 +7,8 @@ class BooksController < ApplicationController
     @books=Book.all
   end
 
-# show画面から投稿するためにBook.newが必要だが@bookはもう使われている
-# ↑ｲﾝｽﾀﾝｽ変数の名前＠○○は正直なんでもいい、あとから見てわかりやすい名前が無難ではある。
+#Q. show画面から投稿するためにBook.newが必要だが@bookはもう使われている
+#A. ｲﾝｽﾀﾝｽ変数の名前＠○○は正直なんでもいい、ただ後から見てわかりやすい名前が無難。
 #.newがあることで、form_withヘルパーが自動で「新規投稿だ」と判断してくれる。
   def show
     @book=Book.find(params[:id])
@@ -16,6 +16,13 @@ class BooksController < ApplicationController
   end
 
   def edit
+    @book=Book.find(params[:id])
+  end
+  
+  def update
+    @book=Book.find(params[:id])
+    @book.update(book_params)
+    redirect_to book_path(@book.id)
   end
   
   def create
@@ -24,7 +31,6 @@ class BooksController < ApplicationController
     @book.save
     redirect_to book_path(@book.id)
   end
-  
   
   def destroy
     book=Book.find(params[:id])
