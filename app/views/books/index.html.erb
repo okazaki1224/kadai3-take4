@@ -1,3 +1,13 @@
+<% if @book.errors.any? %>
+  <h2><%= pluralize(@book.errors.count,"error") %> prohibited this obj from being saved:</h2>
+   <ul>
+    <% @book.errors.full_messages.each do |message| %>
+     <li><%= message %></li>
+    <% end %>
+   </ul>
+  <% end %>
+  
+  
 <%= render 'list', user: current_user,book: @book %>
 
   <h2>～～～～～↓全ユーザーの投稿一覧↓～～～～～</h2>
