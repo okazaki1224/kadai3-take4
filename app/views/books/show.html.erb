@@ -1,3 +1,9 @@
+<% if flash[:notice] %>
+  <p id=notice>
+    <%= flash[:notice] %>
+  </p>
+<% end %>
+
 <%= render 'list', user: @book.user, book: @new_book %> 
 
 
@@ -13,6 +19,6 @@
   
 <% if @book.user==current_user %>  
   <%= link_to "Editリンク",edit_book_path %>
-  <%= link_to "Destroy",book_path,method: :delete %>
+  <%= link_to "Destroy",book_path,method: :delete, data:{confirm:"本当に消しますか？本当に？後悔しません？"} %>
 <% end %>  
 </div>
