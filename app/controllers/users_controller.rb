@@ -5,6 +5,7 @@ class UsersController < ApplicationController
   end
 
   def show
+    flash[:notice]="Welcome! You have signed up successfully."
     @user=User.find(params[:id])
     @books=@user.books
     @new_book=Book.new
