@@ -1,9 +1,12 @@
 <h1>User info</h1>
-<p>ここにプロフィール画像</p>
+<%= image_tag user.get_profile_image(100,100) %>
 <%= user.name %></br>
 <%= user.introduction %></br>
-
-<%= link_to"→ここに後でeditボタン",edit_user_path(user.id) %>
+<% if user == current_user %>
+  <%= link_to"→ここに後でeditボタン",edit_user_path(user.id) %>
+<% else %>
+  <%= link_to "→ここに後でeditボタン",user_path(current_user.id) %>
+<% end %>
 
 <h1>New book</h1>
   <%= form_with model: book do |f| %>
