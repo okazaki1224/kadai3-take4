@@ -16,9 +16,11 @@
   <h4>Title</h4>
   <h4>Opinion</h4>
     <% @books.each do |book| %>
-     <%= image_tag book.user.get_profile_image(100,100) %>
-     
-     
+       <%= link_to user_path(book.user.id) do %>
+         <%= image_tag book.user.get_profile_image(100,100) %>
+       <% end %> 
+       
+       
         <%= link_to book_path(book.id) do %>
           <p>書籍名：<%= book.title %></p>
         <% end %>
