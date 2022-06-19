@@ -11,9 +11,10 @@
 
 <div>
   <h1>Book detail</h1>
-  <p>プロフィール画像</p>
-  
-  <%= @book.user.name %></br>
+  <%= image_tag @book.user.get_profile_image(100,100) %>
+  <%= link_to user_path(@book.user.id) do %>
+    <%= @book.user.name %></br>
+  <% end %>
   <%= @book.title %></br>
   <%= @book.body %></br>
   
