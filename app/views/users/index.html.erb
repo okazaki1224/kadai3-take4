@@ -1,6 +1,6 @@
 <%= render 'books/list', user: current_user,book: @new_book %>
 
-<h1>ここにユーザー一覧</h1>
+
 <% @users.each do |user| %>
     <div>
       <%= image_tag user.get_profile_image(100,100) %>
