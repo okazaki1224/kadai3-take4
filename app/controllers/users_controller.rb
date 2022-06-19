@@ -5,7 +5,6 @@ class UsersController < ApplicationController
   end
 
   def show
-    flash[:notice]="Welcome! You have signed up successfully."
     @user=User.find(params[:id])
     @books=@user.books
     @new_book=Book.new
@@ -19,13 +18,13 @@ class UsersController < ApplicationController
   　@book=Book.new(book_params)
     @book.user_id=current_user.id
     @book.save
-    redirect_to book_path(@book.id)
+    redirect_to book_path(@book.id),notice: "You have creaated book successfully."
   end
   
   def update
       @user=User.find(params[:id])
       @user.update(user_params)
-      redirect_to user_path(@user.id)
+      redirect_to user_path(@user.id),notice: "You have updated profile successfully."
   end
 
   private
