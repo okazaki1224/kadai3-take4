@@ -9,17 +9,27 @@
 
 ～～～～～ここから右側～～～～～
 
-<div>
-  <h1>Book detail</h1>
-  <%= image_tag @book.user.get_profile_image(100,100) %>
-  <%= link_to user_path(@book.user.id) do %>
-    <%= @book.user.name %></br>
-  <% end %>
-  <%= @book.title %></br>
-  <%= @book.body %></br>
+   <table class="table table-striped">
+      
+      <tbody>
+      <tr>
+       <td><%= image_tag @book.user.get_profile_image(100,100) %></br>
+         <%= link_to user_path(@book.user.id) do %>
+   　　　　 <%= @book.user.name %>
+  　　   　<% end %>
+       </td>
+       <td><%= @book.title %><td>
+       <td><%= @book.body %></td>
+       <% if @book.user==current_user %> 
+       <td><%= link_to "Edit",edit_book_path,class:"btn btn-success" %></td>
+       <td><%= link_to "Destroy",book_path,method: :delete, data:{confirm:"本当に消しますか？本当に？"},class:"btn btn-danger" %></td>
+       <% end %>  
+      </tr>
+      </tbody>
+    
+    </table>
   
-<% if @book.user==current_user %>  
-  <%= link_to "Editリンク",edit_book_path %>
-  <%= link_to "Destroy",book_path,method: :delete, data:{confirm:"本当に消しますか？本当に？後悔しません？"} %>
-<% end %>  
-</div>
+ 
+  
+  
+
