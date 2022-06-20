@@ -3,10 +3,11 @@
 <%= user.name %></br>
 <%= user.introduction %></br>
 <% if user == current_user %>
-  <%= link_to"→ここに後でeditボタン",edit_user_path(user.id) %>
+  <%= link_to"→ここに後でeditボタン",edit_user_path(user.id),class:"btn btn_secondary" %>
 <% else %>
-  <%= link_to "→ここに後でeditボタン",user_path(current_user.id) %>
+  <%= link_to "→ここに後でeditボタン",user_path(current_user.id),class:"btn btn_secondary" %>
 <% end %>
+
 
 <h1>New book</h1>
   <%= form_with model: book do |f| %>
@@ -16,4 +17,5 @@
     <%= f.text_area :body %><br>
     <%= f.submit 'Create Book' %>
   <% end %>
+  
   
