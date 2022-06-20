@@ -1,8 +1,17 @@
-<h1>Welcome to Bokers!!</h1>
-  <li>
-   <%= link_to "Sign up", new_user_registration_path %>
-  </li>
-  <li>
-   <%= link_to "Log in", new_user_session_path %>
-  </li>
-  
+<div class="container">
+ <div class="row">
+<div class="mx-auto col-11 col-sm-10 col-lg-8 col-xl-6">
+
+<h1>Welcome to <i class="fas fa-book"></i>Bokers!!</h1>
+<p>
+ In <i class="fas fa-book"></i>Bokers,<br>
+ you can share and exchange your opinions , inpressions , and emotions<br>
+ about various books!
+</p>
+    <%= link_to "Log in", new_user_session_path,class:"btn btn-info btn-lg btn-block" %><br>
+    
+    <%= link_to "Sign up", new_user_registration_path,class:"btn btn-success btn-lg btn-block" %>
+    
+   </div>
+ </div>
+</div>

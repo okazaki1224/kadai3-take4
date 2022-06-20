@@ -7,18 +7,23 @@
    </ul>
   <% end %>
   
+<div class="container">
+ <div class="row">
   
+<div class="col-lg-4">
 <%= render 'list', user: current_user,book: @book %>
+</div>
 
-    
-      <table class="table table-striped">
-      <thead>
-        <tr>
-         <th>Books</th>
-         <th>Title</th>
-         <th>Opinion</th>
-        </tr>
-      </thead>
+ <div class="col-lg-8"> 
+ <h1>Books</h1>
+   <table class="table table-striped">
+    <thead>
+      <tr>
+       <th></th>
+       <th>Title</th>
+       <th>Opinion</th>
+      </tr>
+    </thead>
       
       <tbody>
         <% @books.each do |book| %>
@@ -34,8 +39,12 @@
          <% end %>
        </td>
        <td><%= book.body %></td>
-      </tr></br>
+      </tr>
        <% end %>
       </tbody>
     
     </table>
+   </div>
+   
+  </div>
+ </div>

@@ -4,13 +4,16 @@
   </p>
 <% end %>
 
+<div class="container">
+ <div class="row">
+   
+<div class="col-lg-4">
 <%= render 'list', user: @book.user, book: @new_book %> 
-
-
-～～～～～ここから右側～～～～～
+</div>
+<div class="col-lg-8"> 
 
    <table class="table table-striped">
-      
+     <h1>Book detail</h1>
       <tbody>
       <tr>
        <td><%= image_tag @book.user.get_profile_image(100,100) %></br>
@@ -26,8 +29,9 @@
        <% end %>  
       </tr>
       </tbody>
-    
     </table>
+   </div>
+  </div>
   
  
   
