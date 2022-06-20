@@ -1,17 +1,32 @@
-<h1>User info</h1>
-<%= image_tag user.get_profile_image(100,100) %>
-<%= user.name %></br>
-<%= user.introduction %></br>
+<div class="container">
+ <div class="row">
+  <div class=>
+    <h2>User info</h2>
+
+<table>
+  <tr>
+    <th><%= image_tag user.get_profile_image(100,100) %></th>
+    <th></th>
+  </tr>
+  <tr>
+    <td>name</td>
+    <td><%= user.name %></td>
+  </tr>
+  <tr>
+    <td>introduction</td>
+    <td><%= user.introduction %></td>
+  </tr>
+</table>
+
 <% if user == current_user %>
-  <%= link_to edit_user_path(user.id),class:"btn btn-outline-secondary btn-sm btn-block" do %>
+  <%= link_to edit_user_path(user.id),class:"btn btn-outline-secondary btn-block" do %>
    <i class="fa-solid fa-user-gear"></i>
   <% end %>
 <% else %>
-  <%= link_to user_path(current_user.id),class:"btn btn-outline-secondary btn-sm btn-block" do %>
+  <%= link_to user_path(current_user.id),class:"btn btn-outline-secondary btn-block" do %>
    <i class="fa-solid fa-user-gear"></i>
   <% end %>
 <% end %>
-
 
 <h1>New book</h1>
   <%= form_with model: book do |f| %>
@@ -21,4 +36,7 @@
     <%= f.text_area :body %><br>
     <%= f.submit 'Create Book' %>
   <% end %>
+  </div>
 
+ </div>
+</div>
