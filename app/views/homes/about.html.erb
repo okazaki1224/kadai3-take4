@@ -1,3 +1,16 @@
-<h1>アバウトページよ私は帰ってきた</h1><br>
-<p>安心したまえ変なギミックは無いはずだ</p>
+<% if flash[:notice] %>
+  <p id=notice>
+    <%= flash[:notice] %>
+  </p>
+<% end %>
 
+<div class="container">
+ <div class="row">
+<div class="mx-auto col-11 col-sm-10 col-lg-8 col-xl-6">
+
+<h1>Welcome to <i class="fas fa-book"></i>Bokers!!</h1>
+
+
+   </div>
+ </div>
+</div>
