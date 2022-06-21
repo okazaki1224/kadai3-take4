@@ -5,12 +5,13 @@
 <% end %>
 
 <div class="container">
- <div class="row">
+<div class="row">
    
-<div class="col-lg-4">
-<%= render 'list', user: @book.user, book: @new_book %> 
+<div class="col-md-3">
+ <%= render 'list', user: @book.user, book: @new_book %> 
 </div>
-<div class="col-lg-8"> 
+
+<div class="col-md-8 offset-md-1"> 
 
    <table class="table table-striped">
      <h1>Book detail</h1>
@@ -30,6 +31,8 @@
       </tr>
       </tbody>
     </table>
+    
+</div>
    </div>
   </div>
   
